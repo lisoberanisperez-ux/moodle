@@ -6,3 +6,35 @@ iframe.h5p-iframe {
     min-height: 480px !important;
     height: auto !important;
 }
+
+/* 1. Eliminar barras de desplazamiento fantasma en contenedores de texto H5P */
+.h5p-content .h5p-text,
+.h5p-content div[role="document"],
+.h5p-branching-scenario .h5p-presentation-wrapper .h5p-slide-element,
+.h5p-content p {
+    overflow: hidden !important; /* Esconde barras innecesarias si el texto ya cabe */
+    word-break: break-word !important; /* Evita que palabras largas empujen el contenedor */
+    line-height: 1.4 !important; /* Da un respiro al cálculo de altura */
+}
+
+/* 2. Reparar desbordamiento y colapso de etiquetas en Drag and Drop */
+.h5p-dragquestion .h5p-draggable,
+.h5p-dragquestion .h5p-dropzone {
+    box-sizing: border-box !important; /* Incluye bordes y rellenos en el tamaño total */
+}
+
+/* Forzar que el texto de las etiquetas arrastrables se adapte a pantallas pequeñas */
+.h5p-dragquestion .h5p-draggable .h5p-label,
+.h5p-dragquestion .h5p-draggable span {
+    font-size: 11px !important; /* Achica ligeramente la letra solo en el celular */
+    white-space: normal !important; /* Permite que el texto salte de línea en vez de salirse */
+    overflow: hidden !important;
+    text-overflow: ellipsis !important; /* Agrega "..." si de plano el texto es gigantesco */
+}
+
+/* Dar espacio flexible al escenario para evitar colapsos */
+.h5p-branching-scenario, 
+.h5p-branching-scenario-container {
+    max-width: 100% !important;
+    overflow-x: hidden !important; /* Evita el molesto desplazamiento hacia los lados */
+}
