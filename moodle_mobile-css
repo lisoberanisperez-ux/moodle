@@ -1,0 +1,8 @@
+css/* Forzar la altura y el ancho responsivo de los contenedores H5P en la App */
+.mm-iframe-container iframe, 
+.h5p-iframe-wrapper iframe, 
+iframe.h5p-iframe {
+    width: 100% !important;
+    min-height: 480px !important;
+    height: auto !important;
+}
