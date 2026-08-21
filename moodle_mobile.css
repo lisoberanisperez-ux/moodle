@@ -38,3 +38,22 @@ iframe.h5p-iframe {
     max-width: 100% !important;
     overflow-x: hidden !important; /* Evita el molesto desplazamiento hacia los lados */
 }
+
+/*OPCION2*/
+/* 2. Reparar desbordamiento, colapso y letras gigantes en Drag and Drop */
+.h5p-dragquestion .h5p-draggable,
+.h5p-dragquestion .h5p-dropzone {
+    box-sizing: border-box !important; /* Incluye bordes en el tamaño total */
+}
+
+/* Forzar tamaño de letra miniatura para las palabras cortas */
+.h5p-dragquestion .h5p-draggable .h5p-label,
+.h5p-dragquestion .h5p-draggable span,
+.h5p-dragquestion .ui-draggable .h5p-label {
+    font-size: 10px !important; /* Letra compacta ideal para celulares */
+    line-height: 1.1 !important; /* Espacio de renglón mínimo */
+    padding: 2px 4px !important; /* Reduce el margen interno de la caja */
+    white-space: normal !important; /* Permite saltos de línea automáticos */
+    overflow: hidden !important; 
+    text-overflow: ellipsis !important;
+}
